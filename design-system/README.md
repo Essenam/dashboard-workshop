@@ -109,6 +109,41 @@ selector.
 Components should only ever read the token, never the palette directly, so
 this switch needs no changes anywhere else.
 
+## Controls
+
+Filters need four controls: a text box, a dropdown, a radio group, and a
+checkbox. Build each one from the tokens defined above (border, surface,
+text, accent); never introduce a bespoke color for a control or its states.
+
+**Labels.** Every control needs a visible label, placed above it or beside
+it. Placeholder text is not a label: it disappears once someone starts
+typing, and screen readers do not treat it as one.
+
+**Sizing.** All four controls share one height, `--control-height`, so a
+row of filters lines up. On small screens, raise the touch target to at
+least 44 pixels tall; anything shorter is hard to tap accurately.
+
+**Focus.** Every control shows a visible focus ring in the accent color
+when it receives keyboard focus. Never set `outline: none` without
+supplying a replacement ring; a control that swallows focus without
+showing it is unusable by keyboard.
+
+**Disabled.** A disabled control is faded and does not accept input; its
+label stays legible.
+
+**Invalid.** An invalid control gets a border in the error color, paired
+with visible error text near the label, not color alone.
+
+```html
+<div class="field">
+  <label for="region">Region</label>
+  <select id="region">
+    <option>All</option>
+    <option>North</option>
+  </select>
+</div>
+```
+
 ## Logo
 
 `logo.svg` is a placeholder mark: three simple bars, drawn in a neutral
