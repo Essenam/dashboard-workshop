@@ -1,0 +1,70 @@
+/*
+  Design tokens for this starter's default style.
+  Import this file once and use the variables. Do not hardcode colors or
+  fonts elsewhere; if a value is missing here, add a token instead of a
+  one-off hex code.
+*/
+
+:root {
+  color-scheme: light dark;
+
+  /* Type */
+  --font-sans: "Inter", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+
+  --text-page-title: 600 1.75rem/1.25 var(--font-sans);
+  --text-section-title: 600 1.125rem/1.35 var(--font-sans);
+  --text-body: 400 1rem/1.5 var(--font-sans);
+  --text-small: 400 0.875rem/1.4 var(--font-sans);
+
+  /* Light palette (default) */
+  --color-background: #ffffff;
+  --color-surface: #f4f5f7;
+  --color-border: #d8dbe0;
+  --color-text: #1a1d21;
+  --color-text-muted: #5b6169;
+  --color-accent: #0f766e;
+  --color-success: #15803d;
+  --color-warning: #b45309;
+  --color-error: #b91c1c;
+
+  --radius: 8px;
+  --spacing-unit: 8px;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-background: #14161a;
+    --color-surface: #1d2025;
+    --color-border: #33373d;
+    --color-text: #eceef1;
+    --color-text-muted: #9aa0a8;
+    --color-accent: #2dd4bf;
+    --color-success: #4ade80;
+    --color-warning: #fbbf24;
+    --color-error: #f87171;
+  }
+}
+
+/* Opt-in class for a manual toggle, same values as the media query above. */
+[data-theme="dark"] {
+  --color-background: #14161a;
+  --color-surface: #1d2025;
+  --color-border: #33373d;
+  --color-text: #eceef1;
+  --color-text-muted: #9aa0a8;
+  --color-accent: #2dd4bf;
+  --color-success: #4ade80;
+  --color-warning: #fbbf24;
+  --color-error: #f87171;
+}
+
+body {
+  background: var(--color-background);
+  color: var(--color-text);
+  font: var(--text-body);
+}
+
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}

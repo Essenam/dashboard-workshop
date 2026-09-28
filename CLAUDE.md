@@ -19,6 +19,9 @@ documentation. An en dash or a doubled hyphen is not a substitute. Rewrite the s
 a full stop, colon, semicolon, comma or parentheses instead. If you find an em dash in a file
 you touch, fix it in the same edit.
 
+Why: language models reach for em dashes far more often than people do, so a page full of
+them reads as machine written. Ordinary punctuation reads more professionally.
+
 ## Branches: `dev` and `prod`
 
 This project has two branches, and each one is a live website:
