@@ -24,77 +24,86 @@ about names, counts and boundaries. The table below is a starting map, not a ful
 ## The eight dimensions this material uses
 
 This list keeps DAMA UK's six as its core, because they are the most widely reused
-starting point, and adds two more that other frameworks name but DAMA UK does not:
-integrity and conformity. Each entry gives a plain definition, the source it is closest
-to, and one concrete example of a check. None of these definitions is the only correct
-one; the frameworks above word them differently and sometimes disagree about which
-dimension a given problem belongs under. Treat the wording here as a reasonable default,
-not the final word.
-
-### Completeness
-
-The proportion of data that is actually present, against the amount that should be
-there. Closest to [DAMA UK, resource page](https://www.dama-uk.org/resources/the-six-primary-dimensions-for-data-quality-assessment).
-
-Example check: a required field, such as a customer id or an order date, is null.
-
-### Uniqueness
-
-Nothing in the data is recorded more than once. Closest to [DAMA UK, resource page](https://www.dama-uk.org/resources/the-six-primary-dimensions-for-data-quality-assessment).
-
-Example check: the same record, matched on its key fields, appears twice.
-
-### Timeliness
-
-Data represents reality as of the point in time someone actually needs it. Closest to
-[DAMA UK, resource page](https://www.dama-uk.org/resources/the-six-primary-dimensions-for-data-quality-assessment).
-
-Example check: a status field has not been updated since the event it should describe
-already happened.
-
-### Validity
-
-A value conforms to the format, type and range its definition calls for. Closest to
-[DAMA UK, resource page](https://www.dama-uk.org/resources/the-six-primary-dimensions-for-data-quality-assessment).
-
-Example check: an amount field holds a negative number where negative is not possible,
-or a phone number field holds letters.
+starting point, and adds two that other frameworks name but DAMA UK does not: integrity
+and reasonability. It runs alphabetically, so a reader looking for a dimension finds it
+where they expect. Each entry gives a plain definition, the source it is closest to, and
+one concrete example of a check. None of these definitions is the only correct one; the
+frameworks above word them differently and sometimes disagree about which dimension a
+given problem belongs under. Treat the wording here as a reasonable default, not the
+final word.
 
 ### Accuracy
 
-A value correctly describes the real world thing or event it stands for. This is the one
-dimension that cannot be checked by looking at the data alone; it needs an outside
-reference to compare against. Closest to [DAMA UK, resource page](https://www.dama-uk.org/resources/the-six-primary-dimensions-for-data-quality-assessment).
+The degree to which data correctly represents the real world entity or event it
+describes, usually checked against an authoritative source. This is the one dimension
+that cannot be checked by looking at the data alone. Closest to [DAMA UK, resource page](https://www.dama-uk.org/resources/the-six-primary-dimensions-for-data-quality-assessment).
 
 Example check: an address on file does not match a verified postal reference.
 
+### Completeness
+
+Whether all required data is present, at the field, record or dataset level. Closest to
+[DAMA UK, resource page](https://www.dama-uk.org/resources/the-six-primary-dimensions-for-data-quality-assessment).
+
+Example check: a required field, such as a customer id or an order date, is null.
+
 ### Consistency
 
-Two or more representations of the same thing agree with each other and with a shared
-definition. Closest to [DAMA UK, resource page](https://www.dama-uk.org/resources/the-six-primary-dimensions-for-data-quality-assessment).
+Whether data values agree with each other within a record, across records, across
+systems and over time. Closest to [DAMA UK, resource page](https://www.dama-uk.org/resources/the-six-primary-dimensions-for-data-quality-assessment).
 
 Example check: an order total stored in one place does not match the sum of its line
 items stored elsewhere.
 
 ### Integrity
 
-The absence of data value loss or corruption, extended here to cover broken links
-between records. Named in DAMA-DMBOK2's nine but not in DAMA UK's six. Closest to
+Whether relationships and rules hold, such as referential integrity (no orphan records)
+and internal coherence. Named in DAMA-DMBOK2's nine but not in DAMA UK's six. Closest to
 [Van Nederpelt and Black, DAMA NL, DDQ Research Paper](https://dama-nl.org/wp-content/uploads/2020/09/DDQ-Dimensions-of-Data-Quality-Research-Paper-version-1.2-d.d.-3-Sept-2020.pdf).
 
-Example check: a record refers to another record, such as a customer id on an order,
-that does not exist anywhere in the customer data.
+Example check: an order refers to a customer id that does not exist in the customer data.
 
-### Conformity
+### Reasonability
 
-The representation, syntax and documented meaning of a value match its written
-specification. Not a top level name in any of the frameworks above; it groups ideas that
-ISO 8000-8 calls syntactic and semantic quality, and that McGilvray calls data
-specifications. Closest to [arc42, ISO 8000 standard summary](https://quality.arc42.org/standards/iso-8000).
+Whether data patterns meet expectations, for example whether daily transaction volumes
+fall within a normal range. Named in DAMA-DMBOK2's nine. Closest to [DAMA International, DMBOK2 revisions](https://www.damadmbok.org/dmbok2-revisions).
 
-Example check: a status code appears in the data that is not one of the values the
-documentation lists as valid, or a timestamp is recorded with no time zone attached so
-its meaning is ambiguous.
+Example check: yesterday's order count is a third of every other Tuesday this year, with
+no known cause.
+
+### Timeliness
+
+Whether data is available when needed and current enough for its use. This covers the
+related ideas of currency (how up to date a value is) and latency (how long it takes to
+arrive). Closest to [DAMA UK, resource page](https://www.dama-uk.org/resources/the-six-primary-dimensions-for-data-quality-assessment).
+
+Example check: the newest record is older than the period the report claims to cover.
+
+### Uniqueness
+
+Whether each real world entity appears only once in the dataset. Also called
+deduplication, after the work it usually creates. Closest to [DAMA UK, resource page](https://www.dama-uk.org/resources/the-six-primary-dimensions-for-data-quality-assessment).
+
+Example check: the same record, matched on its key fields, appears twice.
+
+### Validity
+
+Whether values conform to the defined domain, format, type or business rules. Closest to
+[DAMA UK, resource page](https://www.dama-uk.org/resources/the-six-primary-dimensions-for-data-quality-assessment).
+
+Example check: an amount field holds a negative number where negative is not possible,
+or a status code appears that the documentation does not list.
+
+### Adding one of your own
+
+Eight is a starting point, not a boundary. A project that keeps finding problems none of
+these names fits should add a dimension and write its definition down with the rest. The
+worked example that ships with this workshop adds **conformity**, for whether the
+representation and its documentation follow the written specification: a schema that has
+drifted from its dictionary, a timestamp with no time zone, a fee amount the
+documentation never updated. That idea lives in [arc42, ISO 8000 standard summary](https://quality.arc42.org/standards/iso-8000) as syntactic and semantic
+quality, and in McGilvray's list as data specifications, but no framework above makes it
+a top level name.
 
 ## How to adapt this list
 
