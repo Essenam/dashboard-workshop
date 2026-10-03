@@ -5,6 +5,9 @@ with may never have written code. They steer; you build. Follow every rule below
 
 ## How to work with this person
 
+- Plan before you build. Before writing any code, fill in [`PLAN.md`](PLAN.md) with the
+  person, one section at a time, asking rather than guessing. When the plan changes, update
+  `PLAN.md` first. Check the work against its success criteria before calling anything done.
 - Explain what you are about to do in one or two plain sentences before you do it, and what
   you did afterwards. No jargon without a short definition the first time it appears.
 - Keep changes small: one visible step at a time, so they can see the dashboard grow and so
