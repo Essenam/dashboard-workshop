@@ -94,12 +94,14 @@ at the whole thing.
 
 ## Where this sits
 
-This loop is the evidence for the other two.
+This loop is the evidence for the others in the set.
 
 - **`jobs-quote-ux`** says who "the person who uses it" is and what they are trying to do.
   "Pleasing" means pleasing to them, so name them before judging.
 - **`ux-heuristics`** turns "is it correct, is it pleasing" into a systematic pass over a
   screen. Run it on the render, not the source.
+- **`inverse-set-kondo`** declutters what sits behind the screen. After it deletes something,
+  this loop is how you confirm nothing a person relies on went missing.
 
 ## The habit
 

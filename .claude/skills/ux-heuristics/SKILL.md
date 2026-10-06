@@ -17,6 +17,8 @@ interfaces commonly fail people.
 - **`closed-loop-visual-feedback` supplies the evidence.** Inspect the rendered interface,
   at the size and on the device the person will use. Reading the source is not an
   inspection.
+- **`inverse-set-kondo` is the eighth heuristic turned on everything else.** Aesthetic and
+  minimalist design, asked of rules, checks, config, and code instead of the screen.
 
 ## The ten
 

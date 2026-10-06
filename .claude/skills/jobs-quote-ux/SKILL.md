@@ -55,12 +55,14 @@ Every control says what will happen and afterwards says what did.
 
 ## Where this sits
 
-This standard is the first of three, and it sets the target for the other two.
+This standard comes first in the set, and it sets the target for the others.
 
 - **`ux-heuristics`** is the systematic pass. Once the person and their need are named,
   walk the real screen against Nielsen's ten heuristics to find where it fails them.
 - **`closed-loop-visual-feedback`** supplies the evidence. Judge the rendered thing, at the
   size and on the device the person will use, never the source.
+- **`inverse-set-kondo`** asks the same "does this earn its place" question of what sits
+  behind the screen: rules, checks, config, and code that have piled up.
 
 ## Output
 

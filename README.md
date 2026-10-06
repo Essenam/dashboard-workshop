@@ -15,13 +15,15 @@ the workshop. What is here is the groundwork:
 - [`.claude/skills/analyze-data-quality/`](.claude/skills/analyze-data-quality/SKILL.md), a
   skill you run as `/analyze-data-quality`. It takes a dataset from picking dimensions through
   to a dashboard built on the results.
-- Three more skills Claude reaches for while it builds:
+- Four more skills Claude reaches for while it builds:
   [`jobs-quote-ux`](.claude/skills/jobs-quote-ux/SKILL.md) (start from the person and work
   backwards to the technology),
   [`closed-loop-visual-feedback`](.claude/skills/closed-loop-visual-feedback/SKILL.md) (render
-  it, look at it, fix it, repeat) and
+  it, look at it, fix it, repeat),
   [`ux-heuristics`](.claude/skills/ux-heuristics/SKILL.md) (a usability check against Nielsen's
-  ten heuristics).
+  ten heuristics), and
+  [`inverse-set-kondo`](.claude/skills/inverse-set-kondo/SKILL.md) (declutter rules, checks,
+  and code by making every piece earn its way back).
 - [`design-system/`](design-system/README.md), a plain default style: fonts, light and dark
   colors, a placeholder logo and icons. Claude will ask whether you have your company's own.
 
