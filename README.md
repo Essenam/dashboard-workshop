@@ -28,8 +28,6 @@ the workshop. What is here is the groundwork:
 ## Before the workshop
 
 1. A Claude Pro account, and Claude Desktop installed.
-2. Git installed.
-3. A free GitHub account.
-4. A personal laptop, or a work laptop where you have local admin rights.
+2. A personal laptop, or a work laptop where you have local admin rights.
 
 We will take it from there together in the room.
