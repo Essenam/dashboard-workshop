@@ -53,8 +53,23 @@
   }
 }
 
-/* Opt-in class for a manual toggle, same values as the media query above. */
+/* Opt-in attributes for a manual toggle. Each one wins over the device setting, so a
+   Light button works on a device set to dark and the other way round. */
+[data-theme="light"] {
+  color-scheme: light;
+  --color-background: #ffffff;
+  --color-surface: #f4f5f7;
+  --color-border: #d8dbe0;
+  --color-text: #1a1d21;
+  --color-text-muted: #5b6169;
+  --color-accent: #0f766e;
+  --color-success: #15803d;
+  --color-warning: #b45309;
+  --color-error: #b91c1c;
+}
+
 [data-theme="dark"] {
+  color-scheme: dark;
   --color-background: #14161a;
   --color-surface: #1d2025;
   --color-border: #33373d;

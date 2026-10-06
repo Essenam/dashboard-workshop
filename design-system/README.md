@@ -90,9 +90,9 @@ both directions.
 
 The dark palette applies automatically, following the operating system,
 through a `prefers-color-scheme: dark` media query in `tokens.css`. If you
-want a manual toggle instead, add `data-theme="dark"` to `<html>` or
-`<body>`; the same values are also defined under a `[data-theme="dark"]`
-selector.
+want a manual toggle as well, set `data-theme="dark"` or `data-theme="light"`
+on `<html>`. Each one wins over the device setting, so a theme picker works
+in both directions; remove the attribute to follow the device again.
 
 ```css
 /* From tokens.css: automatic, system-driven dark mode */
