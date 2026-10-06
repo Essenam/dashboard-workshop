@@ -8,10 +8,8 @@ the workshop. What is here is the groundwork:
 
 - [`CLAUDE.md`](CLAUDE.md), the ground rules Claude follows while you work.
 - [`PLAN.md`](PLAN.md), the plan for your dashboard. Claude fills it in with you before
-  building: who it is for, the questions it answers, the data, the quality checks and how
-  you will know it is done.
-- [`docs/data-quality-dimensions.md`](docs/data-quality-dimensions.md), the categories of data
-  quality and where they come from. Copy it into your own projects and adapt it.
+  building: who it is for, the questions it answers, the quality checks, and how you will
+  know it is done.
 - [`.claude/skills/analyze-data-quality/`](.claude/skills/analyze-data-quality/SKILL.md), a
   skill you run as `/analyze-data-quality`. It takes a dataset from picking dimensions through
   to a dashboard built on the results.
@@ -24,8 +22,10 @@ the workshop. What is here is the groundwork:
   ten heuristics), and
   [`inverse-set-kondo`](.claude/skills/inverse-set-kondo/SKILL.md) (declutter rules, checks,
   and code by making every piece earn its way back).
+- [`data/raw/`](data/raw/README.md), the local data cache. Raw data files go here and never
+  leave your laptop; git ignores them.
 - [`design-system/`](design-system/README.md), a plain default style: fonts, light and dark
-  colors, a placeholder logo and icons. Claude will ask whether you have your company's own.
+  colors, a placeholder logo, and icons. Claude will ask whether you have your company's own.
 
 ## Before the workshop
 

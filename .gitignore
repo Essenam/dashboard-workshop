@@ -3,10 +3,17 @@
 .env.*
 !.env.example
 
+# The local data cache: raw, row-level files. Only its README is kept.
+data/raw/*
+!data/raw/README.md
+
 # Build output and installed packages
 node_modules/
 dist/
 .netlify/
+src/.observablehq/cache/
+.venv/
+__pycache__/
 
 # OS clutter
 .DS_Store

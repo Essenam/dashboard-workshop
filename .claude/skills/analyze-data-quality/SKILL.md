@@ -13,15 +13,17 @@ each one before moving to the next.
 
 ## 1. Agree on the dimensions
 
-Read `docs/data-quality-dimensions.md` together with the person. Ask which of the eight
-dimensions apply to their data, and whether their organization already uses a different
-name for one of them. Not every dimension applies to every dataset: if uniqueness is
-meaningless for this data, drop it. Write down the short list you land on before moving
-on.
+Ask the person which data quality framework to use. If they name one, such as the
+dimensions in the DAMA-DMBOK, work from that; if their organization has its own list or its
+own names, use those. Do not invent a list of your own. Then ask which dimensions apply to
+their data. Not every dimension applies to every dataset: if uniqueness is meaningless for
+this data, drop it. Write the short list you land on into the "Data quality checks" section
+of `PLAN.md` before moving on.
 
 ## 2. Profile the data first
 
-Before writing a single rule, look at what the data actually contains:
+Before writing a single rule, look at what the data actually contains. The raw files are
+in `data/raw/`, the local cache; read them from there with DuckDB:
 
 - the list of columns and what each one is supposed to mean
 - the data type of each column
@@ -53,12 +55,14 @@ returns are the problem rows.
 ## 4. Run every rule over the whole dataset
 
 Run each rule over every row, never a sample. A sample can hide a problem that only
-shows up in one slice of the data. For each rule, store only:
+shows up in one slice of the data. For each rule, store only the following, as small files
+in `data/summaries/`:
 
 - the count and rate of failing rows
 - a small number of example failing rows, enough to see the shape of the problem
 
-Do not store the full set of failing rows, and never store the raw dataset itself.
+Do not store the full set of failing rows, and never commit the raw dataset itself; it
+stays in `data/raw/`, which git ignores.
 Storing counts, rates and a few examples is what lets these results be committed to a
 repository while the underlying data stays out of it entirely.
 

@@ -1,19 +1,47 @@
 # Workshop dashboard: instructions for Claude
 
-This repo is a participant's copy of an Exagrow workshop starter. The person you are working
-with may never have written code. They steer; you build. Follow every rule below.
+This repo is a participant's copy of an Exagrow workshop starter.
 
 ## How to work with this person
 
 - Plan before you build. Before writing any code, fill in [`PLAN.md`](PLAN.md) with the
   person, one section at a time, asking rather than guessing. When the plan changes, update
   `PLAN.md` first. Check the work against its success criteria before calling anything done.
-- Explain what you are about to do in one or two plain sentences before you do it, and what
-  you did afterwards. No jargon without a short definition the first time it appears.
-- Keep changes small: one visible step at a time, so they can see the dashboard grow and so
-  any mistake is easy to undo.
-- When something fails, say what failed in plain words and what you will try next.
-- Never do anything that costs money or changes an account setting without asking first.
+
+## How this dashboard is built
+
+Use this stack unless the person asks for something else. It is the one the workshop's
+reference dashboard uses, so the room can help each other.
+
+- **[Observable Framework](https://observablehq.com/framework/)** builds the site. Pages are
+  Markdown files in `src/`, and the result is a plain static site in `dist/`. Charts use
+  **Observable Plot**; filters use **Observable Inputs**. Both come with Framework.
+- **Python with DuckDB** does the data work, run through **[uv](https://docs.astral.sh/uv/)**.
+  Python is for the data pipeline only; the site itself is static.
+- **Node.js 20 or newer** is needed. If Node or uv is missing, install it with the person.
+- **GitHub** holds the code. **Netlify** hosts it and rebuilds on every push: the `dev`
+  branch is the test site and `prod` is the real one.
+
+**How the data flows.** Keep these four steps separate:
+
+1. **Raw data lands in `data/raw/`**, the local cache. It comes from the flash drive or the
+   shared folder, or is downloaded once. Git ignores it; never commit it, and never download
+   a file that is already there.
+2. **The data quality tests run against the row-level files** in the cache, with DuckDB.
+   Run every rule over every row, not a sample.
+3. **The results are stored as small summary files** in `data/summaries/`: counts, rates, and
+   a few example rows per rule. These are committed.
+4. **Every page reads the summaries**, through a Framework data loader in `src/data/`. No
+   page ever reads the raw rows.
+
+Because the raw files stay in the cache, changing a test means running it again, not
+downloading again.
+
+## Look and feel
+
+Follow [`design-system/README.md`](design-system/README.md). Before styling anything, ask
+once whether the person has their company's brand guide, colors, fonts, or logo to use in
+place of the defaults.
 
 ## Writing style: no em dashes
 
@@ -29,7 +57,7 @@ them reads as machine written. Ordinary punctuation reads more professionally.
 
 This project has two branches, and each one is a live website:
 
-- **`dev`** is where all work happens. Its site is the test copy.
+- **`dev`** is the default branch and where all work happens. Its site is the test copy.
 - **`prod`** is the real, shared site. It only ever receives work that already ran on `dev`.
 
 **First-time setup.** If the repo has no `prod` branch yet, create it from `dev` and push it:
@@ -43,7 +71,7 @@ git push -u origin prod
 
 **Every change:**
 
-1. Work on `dev`. No pull requests and no feature branches: commit straight to `dev`.
+1. Work on `dev`. CRITICAL: DO NOT USE PRs. COMMIT DIRECTLY TO `DEV`. This repo literally only has one person working in it and they are approving what you do by reviewing it as you go. Don't make extra work for them to do PR theater for no one.
 2. Commit after every change that works, with a short message saying what changed.
 3. **Push after every commit**, immediately: `git push origin dev`. The push is the backup.
    Work that exists only on this laptop can be lost; work on GitHub cannot.
@@ -61,9 +89,6 @@ git push origin prod
 git checkout dev
 ```
 
-If the fast-forward fails, stop and explain; never merge or reset `prod` to force it. Never
-commit to `prod` directly.
-
 ## Secrets
 
 API keys, tokens and passwords are secrets. Treat every one like a password.
@@ -73,9 +98,4 @@ API keys, tokens and passwords are secrets. Treat every one like a password.
   never print it, log it, or echo it back.
 - **On a hosting service** it lives in that service's environment variable settings, set by
   the person in its dashboard.
-- **Never in code, never in git, never in the browser.** Anything shipped to the browser can
-  be read by anyone who opens the page, so a secret is only ever used by code that runs on a
-  server.
-- Before every commit, check `git status` and the diff for anything that looks like a secret.
-  If one is ever committed or pushed, stop, tell the person plainly, and help them create a
-  new one and revoke the old one. Removing it from the latest commit is not enough.
+- **Never in code, never in git.**
