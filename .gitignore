@@ -1,4 +1,4 @@
-# Secrets. Your API key lives here on your laptop and in Netlify, never in git.
+# Secrets. Keys and passwords live in .env on your laptop and in your host's settings, never in git.
 .env
 .env.*
 !.env.example
