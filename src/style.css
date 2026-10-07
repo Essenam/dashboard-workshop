@@ -1,0 +1,28 @@
+/* Site styles. Colors and fonts come from the design system tokens only. */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=JetBrains+Mono&display=swap");
+@import url("../design-system/tokens.css");
+
+body {
+  background: var(--color-background);
+  color: var(--color-text);
+  font: var(--text-body);
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: calc(var(--spacing-unit) * 1.5);
+}
+
+.brand img {
+  height: 40px;
+}
+
+.brand h1 {
+  font: var(--text-page-title);
+  margin: 0;
+}
+
+.muted {
+  color: var(--color-text-muted);
+}
