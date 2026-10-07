@@ -18,7 +18,9 @@ test and verify, then maintain.
 Name one real person, not "users". Then work backwards from what they are trying to do.
 The `jobs-quote-ux` skill is the standard for this section.
 
-- **The person:** the COO of a retail business, who runs day-to-day operations.
+- **The person:** the COO of a ride-hail operation in New York City, who runs day-to-day
+  operations. (First imagined as a retail COO; the workshop data is NYC ride-hail trips, so the
+  role moved to fit it. The same design can later carry real retail data.)
 - **What they are trying to do:** "Show me what is going on, where the pain points are, and
   where my attention is needed. Then let me drill down into the detail."
 - **How often they look:** three times a day. They also want alerts when a number crosses a
@@ -31,9 +33,13 @@ Three to five questions. If a chart does not answer one of these, it does not be
 
 | # | Question the person asks | How they will know the answer at a glance |
 |---|---|---|
-| 1 | _e.g. Are trips up or down this month?_ | _one number with the change from last month_ |
-| 2 | | |
-| 3 | | |
+| 1 | Are trips and revenue on track? | Trips and rider fares for the latest day, week and month, each with the change from the period before |
+| 2 | Where and when are riders waiting too long? | Typical wait from request to pickup, with the zones and hours past my threshold ranked first; click a zone for its detail |
+| 3 | Are drivers getting a fair share of what riders pay? | Driver pay as a share of the fare, by company, with the trend over the year |
+| 4 | Where does something look wrong today? | An attention list: anything past a threshold (volume drop, long waits, pay share, bad data), with the reason |
+| 5 | Can I trust these numbers? | One data quality score per check, with the failing rows a click away |
+
+The data runs September 2025 to August 2026, so "today" means the latest day in the data.
 
 ## Data quality checks
 
