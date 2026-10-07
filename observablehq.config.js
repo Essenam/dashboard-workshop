@@ -14,5 +14,5 @@ export default {
   search: false,
   toc: false,
   head: '<link rel="icon" href="logo.svg" type="image/svg+xml">',
-  footer: "Source: NYC Taxi and Limousine Commission trip record data, September 2025 to August 2026."
+  footer: "Source: NYC Taxi and Limousine Commission trip record data. Covers the latest twelve months published."
 };

@@ -113,9 +113,12 @@ How we will know it is done and right. Each one is something we can check, not a
 Fill this in as you build: anything that will need attention later, such as a key that
 expires or a data source that changes. Include a plan for dependencies that will need to be updated.
 
-- **New months of data.** Copy the new TLC file into `data/raw/`, then run
-  `uv run python pipeline/build_summaries.py` (about 8 minutes for a year) and commit
-  `data/summaries/`. The site rebuilds from the summaries.
+- **New months of data (connected to TLC).** `uv run python pipeline/fetch.py` asks TLC which
+  monthly files exist, without downloading. `--download` fetches only the months missing from
+  `data/raw/`, one file at a time (TLC's server blocks parallel or repeated requests), and saves
+  each file's download headers beside it. Then `uv run python pipeline/build_summaries.py`
+  (about 8 minutes) and commit `data/summaries/`. The dashboard always covers the latest 12
+  months in the cache. Source: https://www.nyc.gov/site/tlc/about/tlc-trip-record-data.page
 - **Three looks a day and alerts.** TLC publishes monthly, about two months late, so the data
   cannot refresh three times a day. Real alerts need a live operational feed and a scheduled job
   that checks the thresholds and sends a message. Not built yet.

@@ -30,7 +30,7 @@ const passing = dq.rules.filter((r) => r.failing === 0).length;
 </div>
 
 <div class="grid grid-cols-4">
-  <div class="card kpi"><div class="label">Trips checked</div><div class="value">${fmt.compact(dq.rows_checked)}</div><div class="context">Sept 2025 to Aug 2026, every row</div></div>
+  <div class="card kpi"><div class="label">Trips checked</div><div class="value">${fmt.compact(dq.rows_checked)}</div><div class="context">${fmt.month(d3.min(monthly, (d) => d.month))} to ${fmt.month(d3.max(monthly, (d) => d.month))}, every row</div></div>
   <div class="card kpi"><div class="label">Rules</div><div class="value">${dq.rules.length}</div><div class="context">${passing} with no failures at all</div></div>
   <div class="card kpi"><div class="label">Overall pass rate</div><div class="value">${fmt.pct(passRate, 2)}</div><div class="context">Of all rule checks, counting defects only</div></div>
   <div class="card kpi"><div class="label">Explained, not errors</div><div class="value">${dq.rules.filter((r) => !counts(r)).length}</div><div class="context">Business rules and documentation gaps</div></div>
