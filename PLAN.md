@@ -18,10 +18,12 @@ test and verify, then maintain.
 Name one real person, not "users". Then work backwards from what they are trying to do.
 The `jobs-quote-ux` skill is the standard for this section.
 
-- **The person:** _who opens this dashboard? (role, team)_
-- **What they are trying to do:** _in their words, not the system's_
-- **How often they look:** _daily, weekly, before a meeting_
-- **What they do today instead:** _the spreadsheet, the email, the report someone rebuilds by hand_
+- **The person:** the COO of a retail business, who runs day-to-day operations.
+- **What they are trying to do:** "Show me what is going on, where the pain points are, and
+  where my attention is needed. Then let me drill down into the detail."
+- **How often they look:** three times a day. They also want alerts when a number crosses a
+  threshold they set, so they do not have to keep checking.
+- **What they do today instead:** spreadsheets and emails.
 
 ## The questions it answers
 
