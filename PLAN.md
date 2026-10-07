@@ -49,8 +49,16 @@ through this step.
 
 | Dimension | The rule, in plain words | Where it shows on the dashboard |
 |---|---|---|
-| _e.g. Completeness_ | _every trip has a pickup zone_ | _a score tile plus the failing rows in a table_ |
-| | | |
+| Completeness | Key fields are filled in: zones, times, fare, driver pay, driver arrival time | Score tile, failing rows a click away |
+| Validity | Values are possible: no negative fares or miles, zones exist in the lookup, dropoff after pickup | Score tile, failing rows a click away |
+| Accuracy | Values are believable: speed under about 80 mph, no zero-mile trips with big fares, pay not far above fare | Score tile, failing rows a click away |
+| Consistency | Fields agree: trip time matches dropoff minus pickup; request, arrival and pickup run in order | Score tile, failing rows a click away |
+| Timeliness | Each month's file holds only that month's trips | Score tile, failing rows a click away |
+| Uniqueness | No trip appears twice (rows identical in every field) | Score tile, failing rows a click away |
+
+Framework: DAMA-DMBOK dimensions. The exact rules are written after profiling the data. Each
+check's score also shows beside the numbers it affects (for example, wait times beside the
+time checks).
 
 ## What is on screen
 

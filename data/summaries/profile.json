@@ -1,0 +1,430 @@
+{
+  "columns": [
+    {
+      "column_name": "hvfhs_license_num",
+      "column_type": "VARCHAR",
+      "min": "HV0003",
+      "max": "HV0005",
+      "approx_unique": 1,
+      "avg": null,
+      "std": null,
+      "q25": null,
+      "q50": null,
+      "q75": null,
+      "count": 251856731,
+      "null_percentage": "0.00"
+    },
+    {
+      "column_name": "dispatching_base_num",
+      "column_type": "VARCHAR",
+      "min": "B02878",
+      "max": "B03406",
+      "approx_unique": 3,
+      "avg": null,
+      "std": null,
+      "q25": null,
+      "q50": null,
+      "q75": null,
+      "count": 251856731,
+      "null_percentage": "0.00"
+    },
+    {
+      "column_name": "originating_base_num",
+      "column_type": "VARCHAR",
+      "min": "B00887",
+      "max": "B03406",
+      "approx_unique": 7,
+      "avg": null,
+      "std": null,
+      "q25": null,
+      "q50": null,
+      "q75": null,
+      "count": 251856731,
+      "null_percentage": "27.72"
+    },
+    {
+      "column_name": "request_datetime",
+      "column_type": "TIMESTAMP",
+      "min": "2025-08-31 23:10:00",
+      "max": "2026-09-01 00:16:00",
+      "approx_unique": 32897673,
+      "avg": "2026-03-02 16:26:57.97865",
+      "std": null,
+      "q25": "2025-12-02 18:25:44.638821",
+      "q50": "2026-03-03 02:39:28.374141",
+      "q75": "2026-05-31 06:00:55.475969",
+      "count": 251856731,
+      "null_percentage": "0.00"
+    },
+    {
+      "column_name": "on_scene_datetime",
+      "column_type": "TIMESTAMP",
+      "min": "2025-08-31 23:06:32",
+      "max": "2026-08-31 23:59:58",
+      "approx_unique": 32552021,
+      "avg": "2026-03-02 16:31:02.583992",
+      "std": null,
+      "q25": "2025-12-02 20:57:37.15872",
+      "q50": "2026-03-03 04:59:03.326358",
+      "q75": "2026-05-31 10:53:51.267304",
+      "count": 251856731,
+      "null_percentage": "0.00"
+    },
+    {
+      "column_name": "pickup_datetime",
+      "column_type": "TIMESTAMP",
+      "min": "2025-09-01 00:00:00",
+      "max": "2026-08-31 23:59:59",
+      "approx_unique": 32213557,
+      "avg": "2026-03-02 16:32:02.864806",
+      "std": null,
+      "q25": "2025-12-02 08:19:25.77626",
+      "q50": "2026-03-03 16:27:10.128619",
+      "q75": "2026-05-31 10:01:34.203972",
+      "count": 251856731,
+      "null_percentage": "0.00"
+    },
+    {
+      "column_name": "dropoff_datetime",
+      "column_type": "TIMESTAMP",
+      "min": "2025-09-01 00:02:03",
+      "max": "2026-09-01 05:32:27",
+      "approx_unique": 30621597,
+      "avg": "2026-03-02 16:51:54.128682",
+      "std": null,
+      "q25": "2025-12-02 18:43:32.278693",
+      "q50": "2026-03-03 00:58:05.125681",
+      "q75": "2026-05-31 12:46:42.114946",
+      "count": 251856731,
+      "null_percentage": "0.00"
+    },
+    {
+      "column_name": "PULocationID",
+      "column_type": "INTEGER",
+      "min": "1",
+      "max": "265",
+      "approx_unique": 298,
+      "avg": "137.92610139532067",
+      "std": "74.91582310934231",
+      "q25": "75",
+      "q50": "139",
+      "q75": "207",
+      "count": 251856731,
+      "null_percentage": "0.00"
+    },
+    {
+      "column_name": "DOLocationID",
+      "column_type": "INTEGER",
+      "min": "1",
+      "max": "265",
+      "approx_unique": 298,
+      "avg": "141.7957508548779",
+      "std": "78.25179296128725",
+      "q25": "75",
+      "q50": "140",
+      "q75": "216",
+      "count": 251856731,
+      "null_percentage": "0.00"
+    },
+    {
+      "column_name": "trip_miles",
+      "column_type": "DOUBLE",
+      "min": "0.0",
+      "max": "5380.78",
+      "approx_unique": 90611,
+      "avg": "4.911316219883745",
+      "std": "5.85439404554914",
+      "q25": "1.4912901453344978",
+      "q50": "2.8838918438355807",
+      "q75": "6.118906556548573",
+      "count": 251856731,
+      "null_percentage": "0.00"
+    },
+    {
+      "column_name": "trip_time",
+      "column_type": "BIGINT",
+      "min": "0",
+      "max": "50454",
+      "approx_unique": 16158,
+      "avg": "1193.3964310844644",
+      "std": "868.3560108551417",
+      "q25": "590",
+      "q50": "965",
+      "q75": "1540",
+      "count": 251856731,
+      "null_percentage": "0.00"
+    },
+    {
+      "column_name": "base_passenger_fare",
+      "column_type": "DOUBLE",
+      "min": "-284.06",
+      "max": "2745.06",
+      "approx_unique": 53018,
+      "avg": "27.474918230877265",
+      "std": "25.914282137307683",
+      "q25": "12.182347725933555",
+      "q50": "19.6276418589181",
+      "q75": "32.94890215430231",
+      "count": 251856731,
+      "null_percentage": "0.00"
+    },
+    {
+      "column_name": "tolls",
+      "column_type": "DOUBLE",
+      "min": "0.0",
+      "max": "136.31",
+      "approx_unique": 4310,
+      "avg": "1.1063355229890415",
+      "std": "3.629566504215328",
+      "q25": "0.0",
+      "q50": "0.0",
+      "q75": "0.0",
+      "count": 251856731,
+      "null_percentage": "0.00"
+    },
+    {
+      "column_name": "bcf",
+      "column_type": "DOUBLE",
+      "min": "0.0",
+      "max": "68.63",
+      "approx_unique": 2472,
+      "avg": "0.6753589148159118",
+      "std": "0.6642780694277628",
+      "q25": "0.2900436102060974",
+      "q50": "0.47065394004059424",
+      "q75": "0.8071637143394054",
+      "count": 251856731,
+      "null_percentage": "0.00"
+    },
+    {
+      "column_name": "sales_tax",
+      "column_type": "DOUBLE",
+      "min": "0.0",
+      "max": "246.9",
+      "approx_unique": 5602,
+      "avg": "2.2618687017547363",
+      "std": "2.124057933815917",
+      "q25": "0.9791545211658205",
+      "q50": "1.6256503774262194",
+      "q75": "2.7791211526346578",
+      "count": 251856731,
+      "null_percentage": "0.00"
+    },
+    {
+      "column_name": "congestion_surcharge",
+      "column_type": "DOUBLE",
+      "min": "0.0",
+      "max": "8.25",
+      "approx_unique": 6,
+      "avg": "0.9465342639581866",
+      "std": "1.3030201590100265",
+      "q25": "0.0",
+      "q50": "0.0",
+      "q75": "2.75",
+      "count": 251856731,
+      "null_percentage": "0.00"
+    },
+    {
+      "column_name": "airport_fee",
+      "column_type": "DOUBLE",
+      "min": "0.0",
+      "max": "9.0",
+      "approx_unique": 28,
+      "avg": "0.24587339331423325",
+      "std": "0.8345103624294683",
+      "q25": "0.0",
+      "q50": "0.0",
+      "q75": "0.0",
+      "count": 251856731,
+      "null_percentage": "0.00"
+    },
+    {
+      "column_name": "tips",
+      "column_type": "DOUBLE",
+      "min": "0.0",
+      "max": "350.08",
+      "approx_unique": 9718,
+      "avg": "1.2682242616728",
+      "std": "3.800461159519417",
+      "q25": "0.0",
+      "q50": "0.0",
+      "q75": "0.0",
+      "count": 251856731,
+      "null_percentage": "0.00"
+    },
+    {
+      "column_name": "driver_pay",
+      "column_type": "DOUBLE",
+      "min": "-37.99",
+      "max": "2022.09",
+      "approx_unique": 41022,
+      "avg": "21.199600347613345",
+      "std": "18.60136552743056",
+      "q25": "9.319576180015979",
+      "q50": "15.82347151365372",
+      "q75": "26.804852240782495",
+      "count": 251856731,
+      "null_percentage": "0.00"
+    },
+    {
+      "column_name": "shared_request_flag",
+      "column_type": "VARCHAR",
+      "min": "N",
+      "max": "Y",
+      "approx_unique": 2,
+      "avg": null,
+      "std": null,
+      "q25": null,
+      "q50": null,
+      "q75": null,
+      "count": 251856731,
+      "null_percentage": "0.00"
+    },
+    {
+      "column_name": "shared_match_flag",
+      "column_type": "VARCHAR",
+      "min": "N",
+      "max": "Y",
+      "approx_unique": 2,
+      "avg": null,
+      "std": null,
+      "q25": null,
+      "q50": null,
+      "q75": null,
+      "count": 251856731,
+      "null_percentage": "0.00"
+    },
+    {
+      "column_name": "access_a_ride_flag",
+      "column_type": "VARCHAR",
+      "min": "N",
+      "max": "Y",
+      "approx_unique": 2,
+      "avg": null,
+      "std": null,
+      "q25": null,
+      "q50": null,
+      "q75": null,
+      "count": 251856731,
+      "null_percentage": "0.00"
+    },
+    {
+      "column_name": "wav_request_flag",
+      "column_type": "VARCHAR",
+      "min": "N",
+      "max": "Y",
+      "approx_unique": 2,
+      "avg": null,
+      "std": null,
+      "q25": null,
+      "q50": null,
+      "q75": null,
+      "count": 251856731,
+      "null_percentage": "0.00"
+    },
+    {
+      "column_name": "wav_match_flag",
+      "column_type": "VARCHAR",
+      "min": "N",
+      "max": "Y",
+      "approx_unique": 2,
+      "avg": null,
+      "std": null,
+      "q25": null,
+      "q50": null,
+      "q75": null,
+      "count": 251856731,
+      "null_percentage": "0.00"
+    },
+    {
+      "column_name": "cbd_congestion_fee",
+      "column_type": "DOUBLE",
+      "min": "0.0",
+      "max": "4.5",
+      "approx_unique": 4,
+      "avg": "0.4930050549254528",
+      "std": "0.7045973233309222",
+      "q25": "0.0",
+      "q50": "0.0",
+      "q75": "1.5",
+      "count": 251856731,
+      "null_percentage": "0.00"
+    },
+    {
+      "column_name": "file_month",
+      "column_type": "VARCHAR",
+      "min": "2025-09",
+      "max": "2026-08",
+      "approx_unique": 11,
+      "avg": null,
+      "std": null,
+      "q25": null,
+      "q50": null,
+      "q75": null,
+      "count": 251856731,
+      "null_percentage": "0.00"
+    }
+  ],
+  "categorical": {
+    "hvfhs_license_num": [
+      [
+        "HV0003",
+        181775009
+      ],
+      [
+        "HV0005",
+        70081722
+      ]
+    ],
+    "shared_request_flag": [
+      [
+        "N",
+        247120134
+      ],
+      [
+        "Y",
+        4736597
+      ]
+    ],
+    "shared_match_flag": [
+      [
+        "N",
+        249084762
+      ],
+      [
+        "Y",
+        2771969
+      ]
+    ],
+    "access_a_ride_flag": [
+      [
+        "N",
+        251612132
+      ],
+      [
+        "Y",
+        244599
+      ]
+    ],
+    "wav_request_flag": [
+      [
+        "N",
+        251122946
+      ],
+      [
+        "Y",
+        733785
+      ]
+    ],
+    "wav_match_flag": [
+      [
+        "N",
+        227987897
+      ],
+      [
+        "Y",
+        23868834
+      ]
+    ]
+  }
+}
