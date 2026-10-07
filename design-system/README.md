@@ -38,6 +38,8 @@ Type scale:
 | Section title | `--text-section-title` |
 | Body | `--text-body` |
 | Small print | `--text-small` |
+| Headline number | `--text-hero` |
+| Eyebrow label above a title | `--text-eyebrow` |
 
 Numbers in tables and charts should use tabular figures so digits line up
 in a column. Add the `.tabular-nums` class from `tokens.css`, or set
@@ -53,9 +55,9 @@ colors.
 
 | Token | Hex |
 |---|---|
-| `--color-background` | `#ffffff` |
-| `--color-surface` | `#f4f5f7` |
-| `--color-border` | `#d8dbe0` |
+| `--color-background` | `#f6f7f5` |
+| `--color-surface` | `#ffffff` |
+| `--color-border` | `#e2e4e8` |
 | `--color-text` | `#1a1d21` |
 | `--color-text-muted` | `#5b6169` |
 | `--color-accent` | `#0f766e` |
@@ -67,15 +69,31 @@ colors.
 
 | Token | Hex |
 |---|---|
-| `--color-background` | `#14161a` |
-| `--color-surface` | `#1d2025` |
-| `--color-border` | `#33373d` |
+| `--color-background` | `#0f1114` |
+| `--color-surface` | `#171a1f` |
+| `--color-border` | `#2a2e35` |
 | `--color-text` | `#eceef1` |
 | `--color-text-muted` | `#9aa0a8` |
 | `--color-accent` | `#2dd4bf` |
 | `--color-success` | `#4ade80` |
 | `--color-warning` | `#fbbf24` |
 | `--color-error` | `#f87171` |
+
+### Depth and charts
+
+The page is a soft off-white (or near-black in dark mode) and cards sit on it in the surface
+color with `--shadow-card`, so the eye finds the cards first. `--color-accent-soft` tints a
+callout strip. Charts take their colors from tokens too:
+
+| Token | Light | Dark | Use |
+|---|---|---|---|
+| `--color-series-1` | `#2a78d6` | `#3987e5` | First series (Uber) |
+| `--color-series-2` | `#eb6834` | `#d95926` | Second series (Lyft) |
+| `--color-seq-low` | `#e3eefc` | `#1a2433` | Low end of a heatmap |
+| `--color-seq-high` | `#104281` | `#86b6ef` | High end of a heatmap |
+
+The two series colors were run through a colorblind-safety validator in both modes and pass.
+Always pair them with a legend or a direct label; color never carries identity alone.
 
 **Contrast rule:** body text must read at 4.5:1 or better against its
 background. `--color-text` and `--color-text-muted` were checked against

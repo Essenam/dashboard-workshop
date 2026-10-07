@@ -62,19 +62,38 @@ time checks).
 
 ## What is on screen
 
-Fill this in based on the user's prompts.
+Four pages, each answering named questions. "Today" is the latest day in the data.
+
+- **Today** (questions 1 and 4). Headline tiles: trips, rider fares, typical wait, driver pay
+  share, each against the same day last week, with the week and month beside it. Below them
+  the attention list: everything past a threshold, worst first, with the reason and a link to
+  the detail. Then the daily trend for the year. A slim strip shows the data quality score.
+- **Wait times** (question 2). Zones ranked by typical wait, those past the threshold first.
+  A day by hour grid shows when waits run long. Choosing a zone drills down to its weekly trend
+  and its hours.
+- **Driver pay** (question 3). Driver pay share by company, month by month, with the share of
+  trips where pay was above what the rider paid (rule ACC-04) beside it.
+- **Data quality** (question 5). Headline: rows checked, rules, overall pass rate. A score per
+  DMBOK dimension. A card per rule: the plain test, count and rate, the trend by month, an
+  example row, what the finding means, and the SQL.
+
+Thresholds (long wait, volume drop, pay share, data quality) live in one settings file and
+can be adjusted on the Today page. Alerts that reach the COO when a threshold is crossed are a
+separate scheduled job, planned after the dashboard works.
 
 ## Success criteria
 
 How we will know it is done and right. Each one is something we can check, not a feeling.
 
-- [ ] Every question in "The questions it answers" is answered on screen
-- [ ] The headline numbers match the source (spot-check two of them by hand)
-- [ ] Every check in "Data quality checks" runs and shows its result
+- [x] Every question in "The questions it answers" is answered on screen
+- [x] The headline numbers match the source (spot-checked against the raw August file: 587,408 trips and
+  $15.7M fares on 31 August, Uber pay share 78.2% for August; all match the screen)
+- [x] Every check in "Data quality checks" runs and shows its result (17 rules, every row)
 - [ ] Looked at on the live dev site, at the size the person will use it, and it is both correct and pleasing
+  (checked locally at desktop and phone width, light and dark; waiting on Netlify for the live site)
 - [ ] A pass against the ten usability heuristics, with nothing serious left open
 - [ ] The security review under "Test and verify" passes
-- [ ] _add your own_
+- [ ] The COO confirms the default alert thresholds (7 min wait, 10% day drop, 25% zone drop, 70% pay share, 1% data defect)
 
 ## Test and verify
 
@@ -93,3 +112,20 @@ How we will know it is done and right. Each one is something we can check, not a
 
 Fill this in as you build: anything that will need attention later, such as a key that
 expires or a data source that changes. Include a plan for dependencies that will need to be updated.
+
+- **New months of data.** Copy the new TLC file into `data/raw/`, then run
+  `uv run python pipeline/build_summaries.py` (about 8 minutes for a year) and commit
+  `data/summaries/`. The site rebuilds from the summaries.
+- **Three looks a day and alerts.** TLC publishes monthly, about two months late, so the data
+  cannot refresh three times a day. Real alerts need a live operational feed and a scheduled job
+  that checks the thresholds and sends a message. Not built yet.
+- **Thresholds** are saved per browser, not shared. If the COO's settings should follow them
+  between devices, move them into `src/components/ui.js` defaults or a shared store.
+- **Rules not reviewed yet.** 12 of 17 rules still say "not reviewed yet". CON-01 jumped from
+  1.1% across the year to 3.0% in August 2026 and should be reviewed first.
+- **TLC re-uploads files** without notice. The `.headers.json` files record what each looked
+  like when fetched; compare before trusting a re-download.
+- **Dependencies.** `npm audit` (October 2026): 0 issues in what ships; 6 (1 low, 5 moderate) in
+  build and preview tools (esbuild, sprintf-js) that run only on this laptop. The fix needs a
+  breaking upgrade of Observable Framework; recheck with `npm audit` monthly and upgrade when a
+  non-breaking release lands. Python: `uv lock --upgrade` then rerun the pipeline.
