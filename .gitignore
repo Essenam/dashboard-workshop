@@ -18,3 +18,11 @@ __pycache__/
 # OS clutter
 .DS_Store
 Thumbs.db
+
+# Local tool settings, stray data files, partial downloads and logs
+.claude/settings.local.json
+*.parquet
+*.part
+*.duckdb
+*.duckdb.wal
+npm-debug.log*

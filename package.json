@@ -8,9 +8,9 @@
     "clean": "rimraf src/.observablehq/cache"
   },
   "engines": {
-    "node": ">=20"
+    "node": ">=24"
   },
   "devDependencies": {
-    "@observablehq/framework": "^1.13.4"
+    "@observablehq/framework": "1.13.4"
   }
 }

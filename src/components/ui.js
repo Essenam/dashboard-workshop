@@ -1,5 +1,6 @@
 // Shared helpers for every page: formatting, thresholds, colors from the tokens, icons.
-import {html} from "npm:htl";
+// Library versions are pinned to the ones the site was tested with. Bump them on purpose.
+import {html} from "npm:htl@1.0.0";
 
 // ---- Thresholds ----------------------------------------------------------------------
 // The defaults for what counts as "needs attention". The COO can adjust them on the Today

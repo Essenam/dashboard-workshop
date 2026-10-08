@@ -108,6 +108,26 @@ How we will know it is done and right. Each one is something we can check, not a
   - [ ] Dependencies checked for known problems (`npm audit`)
   - [ ] Who can open the dashboard is a decision you made, not an accident
 
+## Hardening (from the security review, October 2026)
+
+Before connecting Netlify:
+
+- [x] Pin every library the pages load to the tested version (htl 1.0.0, d3 7.9.0, Plot 0.6.17).
+      A clean build ships only those. d3's own parts (d3-array and so on) still follow d3 7.9.0's
+      version ranges; small leftover risk, caught by looking at the dev site before promoting.
+- [x] Build on Node 24 everywhere (`.nvmrc`, `netlify.toml`, `engines`); Framework pinned to 1.13.4
+- [x] Security headers in `netlify.toml`: content security policy, no framing, nosniff,
+      referrer and permissions policies. Tested locally: all four pages render under them.
+      Recheck in the browser console on the live dev site after the first deploy.
+- [x] `.gitignore` covers local Claude settings, stray data files, partial downloads, logs
+- [ ] Owner: decide who can open the site, and record it here
+- [ ] Owner: GitHub ruleset blocking deletion and force push on `prod` and `dev`; Dependabot
+      alerts and secret scanning on
+- [ ] Owner: keep the commit email private
+
+Before shipping `prod`: a summary sanity check and manifest, a GitHub check on every push,
+download fingerprints in `fetch.py`, deterministic example rows, a written rollback note.
+
 ## Items that will require maintenance
 
 Fill this in as you build: anything that will need attention later, such as a key that
@@ -130,5 +150,7 @@ expires or a data source that changes. Include a plan for dependencies that will
   like when fetched; compare before trusting a re-download.
 - **Dependencies.** `npm audit` (October 2026): 0 issues in what ships; 6 (1 low, 5 moderate) in
   build and preview tools (esbuild, sprintf-js) that run only on this laptop. The fix needs a
-  breaking upgrade of Observable Framework; recheck with `npm audit` monthly and upgrade when a
-  non-breaking release lands. Python: `uv lock --upgrade` then rerun the pipeline.
+  downgrade of Observable Framework, so do not run `npm audit fix --force`. The esbuild issue
+  cannot be reached through `observable preview`, which listens only on this laptop. Recheck
+  with `npm audit` monthly. Library versions the pages load are pinned in the `npm:` imports;
+  bump them on purpose and look at the dev site before promoting. Python: `uv lock --upgrade` then rerun the pipeline.

@@ -3,6 +3,10 @@ title: Today
 ---
 
 ```js
+// Pinned to the tested versions, so a rebuild never pulls a different release.
+import * as d3 from "npm:d3@7.9.0";
+import * as Plot from "npm:@observablehq/plot@0.6.17";
+import {html} from "npm:htl@1.0.0";
 import {fmt, delta, badge, icon, loadThresholds, saveThresholds, DEFAULT_THRESHOLDS, token, monthText} from "./components/ui.js";
 
 const daily = await FileAttachment("data/daily.csv").csv({typed: true});
